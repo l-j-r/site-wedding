@@ -3,9 +3,5 @@ angular.module('WedsiteController', [])
 
 function WedCtrl(
     $scope
-) {
-    $scope.currentNacItem = 'page1';
-    $scope.goto = function(page) {
-        console.log("Goto " + page);
-      }
+) { 
 }

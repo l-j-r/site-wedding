@@ -1,21 +1,10 @@
-<div class="navBardemoBasicUsage">
+<div class="navBar">
         <md-content class="md-padding">
-          <md-nav-bar layout-align="center" md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-            <md-nav-item md-nav-click="goto('page1')" name="Home">
-              Home
+          <md-nav-bar layout-align="center center" md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+            <md-nav-item ng-repeat="option in navOptions" md-nav-sref={{option.sref}} name={{option.name}}>
+              {{option.display}}
             </md-nav-item>
-            <md-nav-item md-nav-click="goto('page2')" name="Party">
-              Party
-            </md-nav-item>
-            <md-nav-item md-nav-click="goto('page3')" name="Registry">
-              Registry
-            </md-nav-item>
-            <md-nav-item md-nav-click="goto('page3')" name="Registry">
-              RSVP
-            </md-nav-item>
-            <md-nav-item md-nav-click="goto('page3')" name="Registry">
-              Photos
-            </md-nav-item>
+            
             
           </md-nav-bar>
       

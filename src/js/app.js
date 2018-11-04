@@ -8,6 +8,11 @@
 
 // CONTROLLER IMPORTS  ----------------------------
     import './controllers/WedsiteController.js'
+    import './controllers/NavController.js'
+// ------------------------------------------------ 
+
+// SERVICE IMPORTS  -------------------------------
+
 // ------------------------------------------------ 
 
 
@@ -16,20 +21,21 @@
         'ui.router',
         'ngMaterial', 
         'ngMessages',
-        'WedsiteController'
+        'WedsiteController',
+        'NavController'
     ]);
 // ------------------------------------------------ 
 
 
 // STATE CONFIG ------------------------------------- 
     wedsite.config(function($stateProvider) {
-        
+
         // HIGH LEVEL PAGE --------------------------
         $stateProvider.state('wedsite', {
             views: {
                 'header': {
                     templateUrl: 'templates/header.html',
-                    controller: 'WedCtrl as vm'
+                    controller: 'NavCtrl as vm'
                 },
                 'content': {
                     template:'<div ui-view></div>'
@@ -44,7 +50,23 @@
         // CONTENT --------------------------------
         .state('wedsite.home', {
             templateUrl: 'templates/home.html',
-            url: '/home'
+            url: '/Home'
+        })
+        .state('wedsite.party', {
+            templateUrl: 'templates/party.html',
+            url: '/Party'
+        })
+        .state('wedsite.registry', {
+            templateUrl: 'templates/registry.html',
+            url: '/Registry'
+        })
+        .state('wedsite.rsvp', {
+            templateUrl: 'templates/RSVP.html',
+            url: '/RSVP'
+        })
+        .state('wedsite.photos', {
+            templateUrl: 'templates/photos.html',
+            url: '/Photos'
         });
     });
 // ------------------------------------------------ 
@@ -55,6 +77,7 @@
   .run([
         "$state",
         function ($state) {
+            console.log($state.current.name);
             $state.go("wedsite.home");
         }
     ]);
