@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "angular": "^1.7.5"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.20"
   }
 }
