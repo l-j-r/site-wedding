@@ -1,13 +1,11 @@
+<header>
 <div class="navBar">
-        <md-content class="md-padding">
-          <md-nav-bar layout-align="center center" md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
-            <md-nav-item ng-repeat="option in navOptions" md-nav-sref={{option.sref}} name={{option.name}}>
-              {{option.display}}
-            </md-nav-item>
-            
-            
-          </md-nav-bar>
-      
-      
-        </md-content>
-      </div>
+  <md-content class="md-padding" md-scroll-shrink>
+    <md-nav-bar layout-align="center center" md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" flex>
+      <md-nav-item ng-repeat="option in navOptions" md-nav-sref={{option.sref}} name={{option.name}}>
+        {{option.display}}
+      </md-nav-item>
+    </md-nav-bar>
+  </md-content>
+</div>
+</header>

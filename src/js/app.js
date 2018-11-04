@@ -77,8 +77,9 @@
   .run([
         "$state",
         function ($state) {
-            console.log($state.current.name);
-            $state.go("wedsite.home");
+            if (!$state.current.name) {
+                $state.go("wedsite.home");
+            }
         }
     ]);
 // ------------------------------------------------ 
