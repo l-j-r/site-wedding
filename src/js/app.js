@@ -1,4 +1,4 @@
-require('angular');
+var angular = require('angular');
 var myApp = angular.module('myApp',[]);
 myApp.controller('UsrCtrl', ['$scope', function ($scope) {
     $scope.users = [
@@ -25,6 +25,7 @@ myApp.controller('UsrCtrl', ['$scope', function ($scope) {
     ];
 }]);
 
+
 myApp.directive('customButton', function () {
     return {
         restrict: 'A',
@@ -37,3 +38,8 @@ myApp.directive('customButton', function () {
         }
     };
 })
+
+console.log("Hello World!~");
+/*
+
+*/
