@@ -1,35 +1,21 @@
+// ------------------------------------------------ GENERAL IMPROTS
 import angular from 'angular';
 import '@uirouter/angularjs';
+import 'angular-material';
+import 'angular-messages';
 
-var myApp = angular.module('myApp',[
-    'ui.router'
+// ------------------------------------------------ CONTROLLER IMPORTS
+import './controllers/WedsiteController.js'
+
+
+var wedsite = angular.module('wedsite',[
+    'ui.router',
+    'ngMaterial', 
+    'ngMessages',
+    'WedsiteController'
 ]);
-myApp.controller('UsrCtrl', ['$scope', function ($scope) {
-    $scope.users = [
-        {
-            "name": "steve",
-            "route": "a",
-            "value": "100"
-        },
-        {
-            "name": "john",
-            "route": "a",
-            "value": "1000"
-        },
-        {
-            "name": "fransisco",
-            "route": "b",
-            "value": "10"
-        },
-        {
-            "name": "lavon",
-            "route": "c",
-            "value": "1"
-        }
-    ];
-}]);
 
-myApp.directive('customButton', function () {
+wedsite.directive('customButton', function () {
     return {
         restrict: 'A',
         replace: true,
@@ -41,25 +27,42 @@ myApp.directive('customButton', function () {
         }
     };
 })
+// ------------------------------------------------ STATE CONFIG 
+wedsite.config(function($stateProvider) {
+    // ------------------------------------------------ PAGE
+    $stateProvider.state('wedsite', {
+        views: {
+            'header': {
+                templateUrl: 'templates/header.html',
+                controller: 'WedCtrl as vm'
+            },
+            'content': {
+                template:'<div ui-view></div>'
+            },
+            'footer': {
+                templateUrl: 'templates/footer.html',
+                controller: 'WedCtrl as vm'
+            }
+        }
+    })
 
-myApp.config(function($stateProvider) {
-    var helloState = {
-      name: 'hello',
-      url: '/hello',
-      template: '<h3>hello world!</h3>'
-    }
-  
-    var aboutState = {
-      name: 'about',
-      url: '/about',
-      template: '<h3>Its the UI-Router hello world app!</h3>'
-    }
-  
-    $stateProvider.state(helloState);
-    $stateProvider.state(aboutState);
+    // ------------------------------------------------ VIEW
+    .state('wedsite.home', {
+        templateUrl: 'templates/home.html',
+        url: '/home'
+    });
+
   });
 
-console.log("Hello World!~");
-/*
 
-*/
+
+  // ------------------------------------------------ RUN
+  angular.module('wedsite')
+  .run([
+        "$state",
+        function ($state) {
+            $state.go("wedsite.home");
+        }
+    ]);
+
+console.log("Hello World!~");
