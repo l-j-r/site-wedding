@@ -1,62 +1,56 @@
-// ------------------------------------------------ GENERAL IMPROTS
-import angular from 'angular';
-import '@uirouter/angularjs';
-import 'angular-material';
-import 'angular-messages';
-
-// ------------------------------------------------ CONTROLLER IMPORTS
-import './controllers/WedsiteController.js'
+// GENERAL IMPORTS --------------------------------  
+    import angular from 'angular';
+    import '@uirouter/angularjs';
+    import 'angular-material';
+    import 'angular-messages';
+// ------------------------------------------------ 
 
 
-var wedsite = angular.module('wedsite',[
-    'ui.router',
-    'ngMaterial', 
-    'ngMessages',
-    'WedsiteController'
-]);
+// CONTROLLER IMPORTS  ----------------------------
+    import './controllers/WedsiteController.js'
+// ------------------------------------------------ 
 
-wedsite.directive('customButton', function () {
-    return {
-        restrict: 'A',
-        replace: true,
-        transclude: true,
-        template:   '<a href="" class="myawesomebutton" ng-transclude>' +
-                        '<i class="icon-ok-sign"></i>' +
-                    '</a>',
-        link: function (scope, element, attrs) {
-        }
-    };
-})
-// ------------------------------------------------ STATE CONFIG 
-wedsite.config(function($stateProvider) {
-    // ------------------------------------------------ PAGE
-    $stateProvider.state('wedsite', {
-        views: {
-            'header': {
-                templateUrl: 'templates/header.html',
-                controller: 'WedCtrl as vm'
-            },
-            'content': {
-                template:'<div ui-view></div>'
-            },
-            'footer': {
-                templateUrl: 'templates/footer.html',
-                controller: 'WedCtrl as vm'
+
+// MODULE DECLARATION -----------------------------
+    var wedsite = angular.module('wedsite',[
+        'ui.router',
+        'ngMaterial', 
+        'ngMessages',
+        'WedsiteController'
+    ]);
+// ------------------------------------------------ 
+
+
+// STATE CONFIG ------------------------------------- 
+    wedsite.config(function($stateProvider) {
+        
+        // HIGH LEVEL PAGE --------------------------
+        $stateProvider.state('wedsite', {
+            views: {
+                'header': {
+                    templateUrl: 'templates/header.html',
+                    controller: 'WedCtrl as vm'
+                },
+                'content': {
+                    template:'<div ui-view></div>'
+                },
+                'footer': {
+                    templateUrl: 'templates/footer.html',
+                    controller: 'WedCtrl as vm'
+                }
             }
-        }
-    })
+        })
 
-    // ------------------------------------------------ VIEW
-    .state('wedsite.home', {
-        templateUrl: 'templates/home.html',
-        url: '/home'
+        // CONTENT --------------------------------
+        .state('wedsite.home', {
+            templateUrl: 'templates/home.html',
+            url: '/home'
+        });
     });
-
-  });
-
+// ------------------------------------------------ 
 
 
-  // ------------------------------------------------ RUN
+// RUNTIME CONFIG ---------------------------------
   angular.module('wedsite')
   .run([
         "$state",
@@ -64,5 +58,7 @@ wedsite.config(function($stateProvider) {
             $state.go("wedsite.home");
         }
     ]);
+// ------------------------------------------------ 
 
-console.log("Hello World!~");
+// DEBUG ------------------------------------------
+    console.log("Hello World!~");
