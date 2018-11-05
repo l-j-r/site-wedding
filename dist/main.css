@@ -20,5 +20,13 @@ header {
       width:100%;
       content:'';
   }
-  
+  #nav-bar {
+      background-color: transparent !important;
+  }
+
+  body {
+    background-image: url("./img/img_bkg.JPG");
+    background-attachment: fixed;
+    background-size: cover;
+  }
   

@@ -26,6 +26,14 @@
     ]);
 // ------------------------------------------------ 
 
+// THEME CONFIG -----------------------------------
+    wedsite.config(function($mdThemingProvider) {
+        $mdThemingProvider.theme('default')
+        .primaryPalette('amber')
+        .accentPalette('indigo');
+    });
+// ------------------------------------------------
+
 
 // STATE CONFIG ------------------------------------- 
     wedsite.config(function($stateProvider) {
