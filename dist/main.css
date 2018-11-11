@@ -40,7 +40,7 @@ header {
   body {
     background-color: transparent !important;
     margin-left:0px;
-    font-family: 'Patrick Hand', cursive;
+    font-family: 'Quicksand', sans-serif;
   }
   
 
@@ -57,11 +57,9 @@ header {
   .announcement {
       color: #444;
       font-size: 42pt;
-      font-family: 'Quicksand', sans-serif;
+      
       padding: 40px;
       background-color: rgba(255,255,255, .7);
-      
-    
   }
 
   #announcement-emphasis {
@@ -95,6 +93,45 @@ header {
     text-align: right;
 }
 
+#announcement-5 {
+    position: absolute;
+    bottom: 30%;
+    top: 30%;
+    right: 0;
+    left: 0;
+    font-size: 28pt;
+    text-align: center;
+}
+
+#announcement-5-button {
+    display: inline-block;
+    width: 120px;
+    height: 80px;
+    font-size: 24pt
+}
+
+#announcement-5-button-container {
+    position:absolute;
+    bottom: 60px;
+    text-align: center;
+    margin: 0, auto;
+    width: 100%;
+}
+
+#announcement-6 {
+    position: absolute;
+    bottom: 30%;
+    top: 30%;
+    right: 0;
+    left: 0;
+    font-size: 14pt;
+    padding: 60px;
+    -webkit-columns: 2; /* Chrome, Safari, Opera */
+    -moz-columns: 2; /* Firefox */
+    columns: 2;
+    color: #222;
+}
+
 /* -------------------- Paralax Images -------------------- */
   .parallax-image { 
     
@@ -111,6 +148,7 @@ header {
     opacity: 0.85;
 
     position: relative;
+    
 }
 #parallax-1 {
     background-image: url("./img/backgrounds/img_bkg-1.JPG");
@@ -126,6 +164,10 @@ header {
 }
 #parallax-5 {
     background-image: url("./img/backgrounds/img_bkg-5.JPG");
+}
+#parallax-6 {
+    background-image: url("./img/backgrounds/img_bkg-6.JPG");
+    height: 800px;
 }
 
 .parallax-break { 
@@ -145,3 +187,4 @@ header {
     padding: 10px;
     vertical-align: auto;
 }
+
