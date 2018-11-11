@@ -1,7 +1,8 @@
 .navBar md-content .ext-content {
-    padding: 50px;
+    
     margin: 20px;
-    background-color: #FFF2E0; }
+    background-color: #FFF2E0; 
+}
 
 header {
     width: 100%;
@@ -11,6 +12,8 @@ header {
     transition: opacity 0.2s ease-in-out;
     transition: height 0.1s ease-in-out;
     pointer-events: initial;
+    z-index:10;
+    background:inherit;
   }
 
 
@@ -21,12 +24,124 @@ header {
       content:'';
   }
   #nav-bar {
-      background-color: transparent !important;
+    /* background-image: url("./img/img_bkg.JPG");
+    background-attachment: fixed;
+    background-size: cover; 
+    background-color: #fff; */
+    
+  }
+
+  html {
+    /* background-image: url("./img/img_bkg.JPG");
+    background-attachment: fixed;
+    background-size: cover; */
   }
 
   body {
-    background-image: url("./img/img_bkg.JPG");
-    background-attachment: fixed;
-    background-size: cover;
+    background-color: transparent !important;
+    margin-left:0px;
+    font-family: 'Patrick Hand', cursive;
   }
   
+
+  h2 {
+      color: #fff;
+  }
+
+  .content-container {
+      min-height: 1000px;
+      
+  }
+
+  /* -------------------- ANNOUNCEMENT -------------------- */
+  .announcement {
+      color: #444;
+      font-size: 42pt;
+      font-family: 'Quicksand', sans-serif;
+      padding: 40px;
+      background-color: rgba(255,255,255, .7);
+      
+    
+  }
+
+  #announcement-emphasis {
+    font-weight: 900;
+    color: #222;
+    font-size: 52pt;
+  }
+
+  #announcement-2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      text-align: right;
+
+  }
+
+#announcement-3 {
+    position: absolute;
+    bottom: 30%;
+    top: 30%;
+    right: 0;
+    left: 0;
+}
+#announcement-4 {
+    position: absolute;
+    bottom: 30%;
+    top: 30%;
+    right: 0;
+    left: 0;
+    text-align: right;
+}
+
+/* -------------------- Paralax Images -------------------- */
+  .parallax-image { 
+    
+
+    /* Set a specific height */
+    height: 600px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    opacity: 0.85;
+
+    position: relative;
+}
+#parallax-1 {
+    background-image: url("./img/backgrounds/img_bkg-1.JPG");
+}
+#parallax-2 {
+    background-image: url("./img/backgrounds/img_bkg-2.JPG");
+}
+#parallax-3 {
+    background-image: url("./img/backgrounds/img_bkg-3.JPG");
+}
+#parallax-4 {
+    background-image: url("./img/backgrounds/img_bkg-4.JPG");
+}
+#parallax-5 {
+    background-image: url("./img/backgrounds/img_bkg-5.JPG");
+}
+
+.parallax-break { 
+    height: 40px;
+    font-size: 24pt;
+}
+
+.icon-large {
+    font-size: 32pt;
+    color: #555;
+
+    
+}
+.center {
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    vertical-align: auto;
+}
