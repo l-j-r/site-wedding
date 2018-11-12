@@ -3,7 +3,9 @@ angular.module('NavController', [])
 
 function NavCtrl(
     $scope,
-    $state
+    $state,
+    $window
+
 ) {
     $scope.navOptions = [
         {
@@ -13,7 +15,7 @@ function NavCtrl(
         },
         {
             name: "Party",
-            display: "Party",
+            display: "BBQ",
             sref: "wedsite.party"
         },
         {
@@ -38,6 +40,8 @@ function NavCtrl(
     $scope.currentNavItem = 'Home'; 
 
     $scope.goto = function(to) {
+        $window.scrollTo(0, 0);
+        console.log("GOTO: " + to);
         $state.go(to);
     }
 }

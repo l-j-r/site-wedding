@@ -79,18 +79,17 @@ header {
 
 #announcement-3 {
     position: absolute;
-    bottom: 30%;
-    top: 30%;
+    bottom: 0;
     right: 0;
-    left: 0;
+    left: 0;   
 }
 #announcement-4 {
     position: absolute;
-    bottom: 30%;
-    top: 30%;
+    bottom: 0;
     right: 0;
     left: 0;
-    text-align: right;
+    text-align: right;   
+    
 }
 
 #announcement-5 {
@@ -121,15 +120,13 @@ header {
 #announcement-6 {
     position: absolute;
     bottom: 30%;
-    top: 30%;
+    overflow:auto;
     right: 0;
     left: 0;
     font-size: 14pt;
-    padding: 60px;
-    -webkit-columns: 2; /* Chrome, Safari, Opera */
-    -moz-columns: 2; /* Firefox */
-    columns: 2;
+    padding: 15px;
     color: #222;
+    text-align: center;
 }
 
 /* -------------------- Paralax Images -------------------- */
@@ -137,7 +134,7 @@ header {
     
 
     /* Set a specific height */
-    height: 600px; 
+    height: 675px; 
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -170,6 +167,12 @@ header {
     height: 800px;
 }
 
+#parallax-rsvp-1 {
+    background-image: url("./img/backgrounds/img_bkg-rsvp-1.JPG");
+    height: 800px;
+    text-align: right;
+}
+
 .parallax-break { 
     height: 40px;
     font-size: 24pt;
@@ -182,9 +185,8 @@ header {
     
 }
 .center {
-    margin: auto;
+    
     text-align: center;
-    padding: 10px;
     vertical-align: auto;
 }
 
