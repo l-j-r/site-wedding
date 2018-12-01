@@ -34,12 +34,12 @@ function GstCtrl(
                 type: "y/n"
             },
             {
-                name:"soAttending",
+                name:"associatedGuest",
                 prompt: "WILL " + $scope.user.associatedGuest.toUpperCase() + " BE ATTENDING?",
                 type: "y/n"
             },
             {
-                name:"soMeat",
+                name:"associatedGuestMeat",
                 prompt: "DOES " + $scope.user.associatedGuest.toUpperCase() + " EAT MEAT?",
                 type: "y/n"
             },
@@ -54,16 +54,41 @@ function GstCtrl(
                 type: "y/n"
             },
             {
-                name: "kids",
+                name: "kidCount",
                 prompt: "HOW MANY OF YOUR SPAWNS WILL ATTEND?",
                 type: "count"
             },
-
-            
         ]
-    }
 
-    // Can we populate the so on the page.
+        
+
+        if(!$scope.user.questions) {
+            $scope.user.questions = {
+                attending: { response: null},
+                meat: { response: null},
+                note: { response: null},
+            };
+        }
+
+        if ($scope.user.kidCount && $scope.user.kidCount > 0) {
+            $scope.user.questions.kidCount = { response: null};
+        }
+
+        if ($scope.user.plusOne) {
+            $scope.user.questions.plusOne = { response: null};
+            $scope.user.questions.plusOneMeat = { response: null};
+        }
+
+        if ($scope.user.associatedGuest) {
+            $scope.user.questions.associatedGuest = { response: null};
+            $scope.user.questions.associatedGuestMeat = { response: null};
+        }
+
+
+
+        
+
+    }
 
 
     // GET ALL USERS -----------------------------------------  
@@ -88,10 +113,10 @@ function GstCtrl(
     $scope.findUser = function () {
         for (let guest of $scope.guests) {
             // if both the first and last name match, let's call them the user.
-            if (guest.firstName.toLowerCase() === $scope.user.firstName.toLowerCase() && guest.lastName.toLowerCase() === $scope.user.lastName.toLowerCase()) {
+            if (guest.guestInfo.firstName.toLowerCase() === $scope.user.firstName.toLowerCase() && guest.guestInfo.lastName.toLowerCase() === $scope.user.lastName.toLowerCase()) {
 
                 $scope.isGuest = true;
-                $scope.user = guest;
+                $scope.user = guest.guestInfo;
                 
                 updateQuestions();
                 
@@ -105,13 +130,16 @@ function GstCtrl(
 
     // SUBMIT TO SERVER ---------------------------------- 
     $scope.submit = function () {
+        console.log(JSON.stringify($scope.response));
+        console.log(JSON.stringify($scope.user));
+        
         // console.log(JSON.stringify($scope.response));
         $http({
             method : "POST",
             url : guestURL,
             data: 
             {
-                response: $scope.response,
+                questions: $scope.user.questions,
                 id: $scope.user.id
             }
         }).then(function mySuccess(response) {
@@ -119,7 +147,7 @@ function GstCtrl(
             if (response && response.data) {
                 $scope.guests = response.data.guests;
             }
-            $scope.complete = true;
+            // $scope.complete = true;
             
             
         }, function Error(response) {
