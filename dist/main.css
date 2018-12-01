@@ -200,6 +200,18 @@ header {
     
 }
 
+#parallax-photos-1 {
+    background-image: url("./img/backgrounds/img_bkg-photos-1.jpg");
+    height: 800px;
+    
+}
+
+#parallax-photos-2 {
+    background-image: url("./img/backgrounds/img_bkg-photos-2.JPG");
+    height: 800px;
+    
+}
+
 .parallax-break { 
     height: 40px;
     font-size: 24pt;
@@ -260,4 +272,13 @@ header {
     width: 50px;
 }
 
-
+#photos-sub-title {
+    font-size: 14pt;
+    padding: 15px;
+    
+    
+}
+#photos-sub-title-container {
+    overflow: auto;
+    height: 90px;
+}
