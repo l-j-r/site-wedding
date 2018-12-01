@@ -1,1 +1,107 @@
-<p>RSVP Content</p>
+<!-- PARRALAX IMAGE ================================================================================ -->
+<div class='parallax-image' id='parallax-rsvp-1'>
+    <div class='announcement' id='announcement-rsvp'>
+        SO, YOU
+        <div id='announcement-emphasis'>
+            COMIN'?
+        </div>
+    </div>
+</div>
+
+<!-- LOOKUP ================================================================================ -->
+<div id="rsvp-form">
+    <div ng-show="isLoading">
+        ...Establishing Psychic Link...
+    </div>
+    <div ng-show="!isGuest && !isLoading">
+
+        <!-- PROMPT ================================================================================ -->
+        <div id='user-card-tag'>
+            WHO ARE YOU?
+        </div>
+
+        <!-- NAME ENTRY ================================================================================ -->
+        <div layout-gt-sm="row">
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>First Name</label>
+                <input ng-model="user.firstName">
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Last Name</label>
+                <input ng-model="user.lastName">
+            </md-input-container>
+
+            <md-button class="md-raised md-primary" id="announcement-rsvp-button" ng-click="findUser()">Look me up!</md-button>
+
+        </div>
+    </div>
+
+    <!-- CAN'T FIND ================================================================================ -->
+    <div id="failure-message" ng-show="hasFailed && !isGuest">
+        Hmmmmm. Looks like we can't find you. Make sure your name is entered how it is spelled in the email you
+        received. If things still aren't working, <a href="#">Let us know we goofed!</a>
+    </div>
+
+    <!-- FORM ================================================================================ -->
+    <div ng-show="isGuest && !complete" class="inline">
+
+        <!-- USER CARD ================================================================================ -->
+        <div id="user-card">
+            <i class="fas fa-user-circle user-item"></i>
+            <div id="firstNameDisplay" class="user-item">{{user.firstName}}</div>
+            <div id="lastNameDisplay" class="user-item">{{user.lastName}}</div>
+        </div>
+
+        <!-- PROMPT ================================================================================ -->
+        <div id='user-card-tag'>
+            LOOKS GOOD. NOW JUST LET US KNOW WHAT'S UP!
+        </div>
+
+        <!-- QUESTIONS ================================================================================ -->
+        <div id='rsvp-form-options'>
+
+            <div ng-repeat="question in questions">
+                <div ng-show="user.questions[question.name] && (question.name == 'attending' || response.attending == 'yes')">
+                    <div>
+                        {{question.prompt}}
+                    </div>
+
+                    <!-- Y/N ================================================================================ -->
+                    <md-radio-group ng-model=response[question.name] class='response-radio' ng-show="question.type == 'y/n'">
+                        <md-radio-button value="yes" class="md-primary">YUP</md-radio-button>
+                        <md-radio-button value="no"> NOPE </md-radio-button>
+                    </md-radio-group>
+
+                    <!-- SLIDER ================================================================================ -->
+                    <md-slider-container ng-show="question.type == 'count'">
+                        <md-slider  ng-model="response.childCount" min="0" max={{user.spawnCount}} aria-label="blue" id="blue-slider" class="md-primary">
+                        </md-slider>
+                        <md-input-container>
+                            <input id='input-count' type="number" ng-model="response.childCount" aria-label="blue" aria-controls="blue-slider">
+                        </md-input-container>
+                    </md-slider-container>
+                </div>
+            </div>
+
+            <!-- SUBMIT ================================================================================ -->
+            <md-button class="md-raised md-primary" id="announcement-rsvp-button" ng-click="submit()">
+                RSVP!
+            </md-button>
+
+        </div>
+    </div>
+    <!-- COMPLETE ================================================================================ -->
+    <div ng-show="complete && response.attending" >
+        WOOT! GOT IT!
+    </div>
+    <div ng-show="complete && !response.attending" >
+        GOT IT! THANKS FOR LETTING US KNOW!
+    </div>
+</div>
+
+
+<div class='parallax-image' id='parallax-rsvp-2'>
+
+</div>

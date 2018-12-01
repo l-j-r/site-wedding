@@ -112,6 +112,7 @@ header {
 #announcement-5-button-container {
     position:absolute;
     bottom: 60px;
+    width: 60px;
     text-align: center;
     margin: 0, auto;
     width: 100%;
@@ -127,6 +128,20 @@ header {
     padding: 15px;
     color: #222;
     text-align: center;
+}
+
+#announcement-rsvp {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;  
+}
+
+#announcement-rsvp-button {
+    text-align: center;
+    margin: 0, auto;
+    width: 200px;
+    font-size: 20pt;
 }
 
 /* -------------------- Paralax Images -------------------- */
@@ -167,15 +182,28 @@ header {
     height: 800px;
 }
 
-#parallax-rsvp-1 {
-    background-image: url("./img/backgrounds/img_bkg-rsvp-1.JPG");
+#parallax-party-1 {
+    background-image: url("./img/backgrounds/img_bkg-party-1.JPG");
     height: 800px;
     text-align: right;
+}
+
+#parallax-rsvp-1 {
+    background-image: url("./img/backgrounds/img_bkg-rsvp-1.JPG");
+    height: 600px;
+    
+}
+
+#parallax-rsvp-2 {
+    background-image: url("./img/backgrounds/img_bkg-rsvp-2.JPG");
+    height: 600px;
+    
 }
 
 .parallax-break { 
     height: 40px;
     font-size: 24pt;
+    overflow: hidden;
 }
 
 .icon-large {
@@ -189,4 +217,47 @@ header {
     text-align: center;
     vertical-align: auto;
 }
+
+#rsvp-form {
+    padding: 20px;
+    overflow:auto;
+}
+
+#user-card {
+    font-size: 32pt;
+    border-color: #444;
+    border-style: solid;
+    display: inline-flex;
+    padding: 20px;
+    margin: 20px;
+    
+}
+
+.user-item {
+    margin: 10px;
+}
+
+
+#user-card-tag {
+    font-size: 20pt;
+    display: inline;
+}
+
+#rsvp-form-options {
+    font-size: 20pt;
+    border-color: #444;
+    border-style: solid;
+    padding: 20px;
+    margin: 20px;
+    width: auto;
+}
+
+.response-radio {
+    padding-left: 60px;
+}
+
+#input-count {
+    width: 50px;
+}
+
 

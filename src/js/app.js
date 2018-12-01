@@ -9,6 +9,7 @@
 // CONTROLLER IMPORTS  ----------------------------
     import './controllers/WedsiteController.js'
     import './controllers/NavController.js'
+    import './controllers/GuestController.js'
 // ------------------------------------------------ 
 
 // SERVICE IMPORTS  -------------------------------
@@ -22,7 +23,8 @@
         'ngMaterial', 
         'ngMessages',
         'WedsiteController',
-        'NavController'
+        'NavController',
+        'GuestController'
     ]);
 // ------------------------------------------------ 
 
@@ -70,8 +72,15 @@
         })
         .state('wedsite.rsvp', {
             templateUrl: 'templates/RSVP.html',
-            url: '/RSVP'
+            url: '/RSVP?fn&ln',
+            controller: 'GstCtrl as vm',
+            params: {
+                fn : null,
+                ln : null
+            }
         })
+        
+        
         .state('wedsite.photos', {
             templateUrl: 'templates/photos.html',
             url: '/Photos'
@@ -90,7 +99,19 @@
             }
         }
     ]);
-// ------------------------------------------------ 
+
+
+angular.module('wedsite')
+    .run([
+        "$http",
+        function ($http) {
+            
+        }
+    ]);
+    // ------------------------------------------------ 
 
 // DEBUG ------------------------------------------
     console.log("Hello World!~");
+
+    
+    
