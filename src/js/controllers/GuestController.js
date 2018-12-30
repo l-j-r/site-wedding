@@ -1,7 +1,7 @@
 angular.module('GuestController', [])
 .controller('GstCtrl', GstCtrl);
 
-const guestURL = "http://26b3cd1d.ngrok.io/guest-list/";
+const guestURL = "https://9afd53ec.ngrok.io/guest-list";
 
 function GstCtrl(
     $scope,
@@ -141,6 +141,10 @@ function GstCtrl(
             {
                 questions: $scope.user.questions,
                 id: $scope.user.id
+            },
+            withCredentials: true,
+            headers: {
+                        'Content-Type': 'application/json; charset=utf-8'
             }
         }).then(function mySuccess(response) {
             
