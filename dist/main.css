@@ -1,7 +1,6 @@
 .navBar md-content .ext-content {
-    
     margin: 20px;
-    background-color: #FFF2E0; 
+    background-color: #FFF2E0;
 }
 
 header {
@@ -12,84 +11,74 @@ header {
     transition: opacity 0.2s ease-in-out;
     transition: height 0.1s ease-in-out;
     pointer-events: initial;
-    z-index:10;
-    background:inherit;
-  }
+    z-index: 10;
+    background: inherit;
+}
 
 
-  #content:before {
-      height:56px;
-      display:block;
-      width:100%;
-      content:'';
-  }
-  #nav-bar {
+#nav-bar {
     /* background-image: url("./img/img_bkg.JPG");
     background-attachment: fixed;
     background-size: cover; 
     background-color: #fff; */
-    
-  }
+}
 
-  html {
+html {
     /* background-image: url("./img/img_bkg.JPG");
     background-attachment: fixed;
     background-size: cover; */
-  }
+}
 
-  body {
+body {
     background-color: transparent !important;
-    margin-left:0px;
+    margin-left: 0px;
     font-family: 'Quicksand', sans-serif;
-  }
-  
+}
 
-  h2 {
-      color: #fff;
-  }
+h2 {
+    color: #fff;
+}
 
-  .content-container {
-      min-height: 1000px;
-      
-  }
+.content-container {
+    min-height: 1000px;
+}
 
-  /* -------------------- ANNOUNCEMENT -------------------- */
-  .announcement {
-      color: #444;
-      font-size: 42pt;
-      
-      padding: 40px;
-      background-color: rgba(255,255,255, .7);
-  }
+/* -------------------- ANNOUNCEMENT -------------------- */
 
-  #announcement-emphasis {
+.announcement {
+    color: #444;
+    font-size: 42pt;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, .7);
+}
+
+#announcement-emphasis {
     font-weight: 900;
     color: #222;
     font-size: 52pt;
-  }
+}
 
-  #announcement-2 {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      text-align: right;
-
-  }
+#announcement-2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: right;
+}
 
 #announcement-3 {
     position: absolute;
     bottom: 0;
     right: 0;
-    left: 0;   
+    left: 0;
 }
+
 #announcement-4 {
     position: absolute;
     bottom: 0;
     right: 0;
     left: 0;
-    text-align: right;   
-    
+    text-align: right;
 }
 
 #announcement-5 {
@@ -110,7 +99,7 @@ header {
 }
 
 #announcement-5-button-container {
-    position:absolute;
+    position: absolute;
     bottom: 60px;
     width: 60px;
     text-align: center;
@@ -121,7 +110,7 @@ header {
 #announcement-6 {
     position: absolute;
     bottom: 30%;
-    overflow:auto;
+    overflow: auto;
     right: 0;
     left: 0;
     font-size: 14pt;
@@ -134,7 +123,7 @@ header {
     position: absolute;
     bottom: 0;
     right: 0;
-    left: 0;  
+    left: 0;
 }
 
 #announcement-rsvp-button {
@@ -145,41 +134,87 @@ header {
 }
 
 /* -------------------- Paralax Images -------------------- */
-  .parallax-image { 
-    
 
+.parallax-image {
     /* Set a specific height */
-    height: 675px; 
-
+    height: 675px;
     /* Create the parallax scrolling effect */
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
-    opacity: 0.85;
-
+    opacity: 0.95;
     position: relative;
-    
 }
+
+@media not screen and (max-device-width:480px) {
+    .parallax-image {
+        background-attachment: fixed;
+    }
+    #content:before {
+        height: 56px;
+        display: block;
+        width: 100%;
+        content: '';
+    }
+}
+
+@media screen and (max-device-width:480px) {
+    .md-nav-bar,
+    .md-nav-bar>nav,
+    ._md-nav-bar-list,
+    .md-button._md-nav-button {
+        height: 100px;
+        font-size: 20pt;
+    }
+    #content:before {
+        height: 100px;
+        display: block;
+        width: 100%;
+        content: '';
+    }
+    .mobile-text-enlarge {
+        font-size: 20pt;
+    }    
+}
+
+
+
 #parallax-1 {
     background-image: url("./img/backgrounds/img_bkg-1.jpeg");
 }
+
 #parallax-2 {
     background-image: url("./img/backgrounds/img_bkg-2.jpeg");
 }
+
 #parallax-3 {
     background-image: url("./img/backgrounds/img_bkg-3.jpeg");
 }
+
 #parallax-4 {
     background-image: url("./img/backgrounds/img_bkg-4.jpeg");
 }
+
 #parallax-5 {
     background-image: url("./img/backgrounds/img_bkg-5.jpeg");
 }
+
 #parallax-6 {
     background-image: url("./img/backgrounds/img_bkg-6.jpeg");
     height: 800px;
+}
+
+#parallax-reg-1 {
+    background-image: url("./img/backgrounds/img_bkg-reg-1.jpeg");
+    height: 800px;
+}
+
+#parallax-reg-1 {
+    background-image: url("./img/backgrounds/img_bkg-reg-1.jpeg");
+}
+
+#parallax-reg-2 {
+    background-image: url("./img/backgrounds/img_bkg-reg-2.jpeg");
 }
 
 #parallax-party-1 {
@@ -188,31 +223,32 @@ header {
     text-align: right;
 }
 
+#parallax-party-2 {
+    height:inherit;
+    background-image: url("./img/backgrounds/img_bkg-party-1.jpeg");
+}
+
 #parallax-rsvp-1 {
     background-image: url("./img/backgrounds/img_bkg-rsvp-1.jpeg");
     height: 600px;
-    
 }
 
 #parallax-rsvp-2 {
     background-image: url("./img/backgrounds/img_bkg-rsvp-2.jpeg");
     height: 600px;
-    
 }
 
 #parallax-photos-1 {
     background-image: url("./img/backgrounds/img_bkg-photos-1.jpeg");
     height: 800px;
-    
 }
 
 #parallax-photos-2 {
     background-image: url("./img/backgrounds/img_bkg-photos-2.jpeg");
     height: 800px;
-    
 }
 
-.parallax-break { 
+.parallax-break {
     height: 40px;
     font-size: 24pt;
     overflow: hidden;
@@ -221,18 +257,16 @@ header {
 .icon-large {
     font-size: 32pt;
     color: #555;
-
-    
 }
+
 .center {
-    
     text-align: center;
     vertical-align: auto;
 }
 
 #rsvp-form {
     padding: 20px;
-    overflow:auto;
+    overflow: auto;
 }
 
 #user-card {
@@ -242,13 +276,11 @@ header {
     display: inline-flex;
     padding: 20px;
     margin: 20px;
-    
 }
 
 .user-item {
     margin: 10px;
 }
-
 
 #user-card-tag {
     font-size: 20pt;
@@ -275,10 +307,181 @@ header {
 #photos-sub-title {
     font-size: 14pt;
     padding: 15px;
-    
-    
 }
+
 #photos-sub-title-container {
     overflow: auto;
     height: 90px;
+}
+
+#partay {
+    /* Create the parallax scrolling effect */
+}
+
+/* PARTY */
+
+#party-primary-info-container {
+    width: 774px;
+    margin: auto;
+    background-color: #fff;
+    /* background-image: url("./img/backgrounds/img_bkg-1.jpeg"); */
+}
+
+#party-info-secondary-container {
+    width: 774px;
+    margin: auto;
+    background-color: #fff;
+}
+
+.party-info-primary {
+    width: 100%;
+    padding: 40px 0px;
+}
+
+.party-info-primary-title {
+    font-size: 32pt;
+    font-weight: 900;
+    text-align: center;
+    vertical-align: auto;
+    margin: 30px 10px 10px 10px;
+}
+
+.party-info-primary-subtitle {
+    font-size: 20pt;
+    text-align: center;
+    vertical-align: auto;
+    margin: 10px;
+}
+
+#party-map-wrapper {
+    text-align: center;
+    vertical-align: auto;
+}
+
+#directions-hint {
+    text-align: center;
+    vertical-align: auto;
+    font-style: italic;
+    font-size: 12pt;
+    margin: 10px 10px 30px 10px;
+}
+
+#party-directions-table {
+    width: 100%;
+}
+
+#party-directions-table th {
+    text-align: center;
+}
+
+#party-directions-table td {
+    vertical-align: top;
+}
+
+.party-info-text {
+    padding: 0px 40px;
+    margin: 20px auto;
+}
+
+.party-info-secondary-title {
+    font-weight: 600;
+    font-size: 26pt;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.party-info-secondary {
+    padding-bottom: 60px;
+}
+
+.party-info-hotels {
+    width: 60%;
+    margin: auto;
+}
+
+.hotel-info {
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 18px 18px rgba(0, 0, 0, 0.025);
+    padding: 10px;
+    margin: 25px;
+    max-width: 400px;
+    cursor: pointer;
+}
+
+.hotel-name {
+    font-weight: 700;
+    font-size: 14pt;
+    text-align: center;
+    margin: 10px;
+}
+
+#basecamp .hotel-photo {
+    background-image: url("./img/cards/hotel-base.png");
+    background-size: cover;
+}
+
+a {
+    color: black;
+}
+
+.hotel-photo {
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+}
+
+.party-info-tertiary-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 22pt;
+    padding-top: 20px;
+}
+
+/* Registry */
+
+#reg-break {
+    height: auto;
+}
+
+#reg-break-text {
+    font-size: 14pt;
+    padding: 15px;
+    max-width: 1024px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#registry-option-table {
+    width: 1024px;
+    margin: auto;
+    padding-top: 60px;
+}
+
+.registry-option {
+    background-color: rgba(249, 249, 249, 0.9);
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 40px;
+    max-width: 380px;
+}
+
+.registry-option-name {
+    width: 100%;
+    text-align: center;
+    font-size: 24pt;
+    font-weight: 700;
+}
+
+.registry-option a {
+    width: auto;
+    margin: auto;
+}
+
+.registry-option-image {
+    border-radius: 5px;
+    width: 300px;
+    height: 200px;
+    margin-bottom: 30px;
+    margin-left: 40px;
 }
