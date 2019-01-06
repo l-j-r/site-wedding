@@ -2,6 +2,7 @@ angular.module('NavController', [])
 .controller('NavCtrl', NavCtrl);
 
 function NavCtrl(
+    $rootScope,
     $scope,
     $state,
     $window
@@ -37,12 +38,15 @@ function NavCtrl(
         
     ];
 
-    $scope.currentNavItem = 'Home'; 
-
-    $scope.goto = function(to) {
-        $window.scrollTo(0, 0);
-        console.log("GOTO: " + to);
-        $state.go(to);
+    let state = $state.current.name;
+    for (let option of $scope.navOptions) {
+        if (option.sref == state) {
+            $rootScope.currentNavItem = option.name;
+        }
     }
+
+    $rootScope.currentNavItem = $rootScope.currentNavItem || 'Party';
+
+    $scope.goto = $rootScope.goto;
 }
 
