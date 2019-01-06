@@ -41,7 +41,7 @@
     <!-- CAN'T FIND ================================================================================ -->
     <div id="failure-message" ng-show="hasFailed && !isGuest">
         Hmmmmm. Looks like we can't find you. Make sure your name is entered how it is spelled in the email you
-        received. If things still aren't working, <a href="#">Let us know we goofed!</a>
+        received. If things still aren't working, <a href="mailto:ReadySetLuke@gmail">Let us know we goofed!</a>
     </div>
 
     <!-- FORM ================================================================================ -->
@@ -63,23 +63,29 @@
         <div id='rsvp-form-options'>
 
             <div ng-repeat="question in questions">
-                <div ng-show="user.questions[question.name] && (question.name == 'attending' || user.questions.attending.response == 'yes')">
+                <div ng-if="showQuestion(question)">
                     <div>
                         {{question.prompt}}
                     </div>
 
                     <!-- Y/N ================================================================================ -->
-                    <md-radio-group ng-model=user.questions[question.name].response  class='response-radio' ng-show="question.type == 'y/n'">
+                    <md-radio-group ng-model=user.questions[question.name].response class='response-radio' ng-show="question.type == 'y/n'">
                         <md-radio-button value="yes" class="md-primary">YUP</md-radio-button>
                         <md-radio-button value="no"> NOPE </md-radio-button>
                     </md-radio-group>
 
+                    <!-- Text ================================================================================ -->
+                    <md-input-container class="md-block" ng-show="question.type == 'text'">
+                        
+                        <textarea ng-model=user.questions[question.name].response md-maxlength="150" rows="5" aria-label='note'
+                            md-select-on-focus md-detect-hidden placeholder={{question.hint}}></textarea>
+                    </md-input-container>
+
                     <!-- SLIDER ================================================================================ -->
                     <md-slider-container ng-show="question.type == 'count'">
-                        <md-slider  ng-model="user.questions.kidCount.response" min="0" max={{user.kidCount}} aria-label="blue" id="blue-slider" class="md-primary">
-                        </md-slider>
                         <md-input-container>
-                            <input id='input-count' type="number" ng-model="user.questions.kidCount.response" aria-label="blue" aria-controls="blue-slider">
+                            <input id='input-count' type="number" ng-model="user.questions.kidCount.response"
+                                aria-label="blue" aria-controls="blue-slider">
                         </md-input-container>
                     </md-slider-container>
                 </div>
@@ -93,10 +99,10 @@
         </div>
     </div>
     <!-- COMPLETE ================================================================================ -->
-    <div ng-show="complete && response.attending" >
+    <div ng-show="complete && response.attending">
         WOOT! GOT IT!
     </div>
-    <div ng-show="complete && !response.attending" >
+    <div ng-show="complete && !response.attending">
         GOT IT! THANKS FOR LETTING US KNOW!
     </div>
 </div>
